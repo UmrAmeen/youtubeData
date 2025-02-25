@@ -11,7 +11,7 @@ export default function SearchBar() {
     video.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  console.log(filteredList);
+  // console.log(filteredList);
   return (
     <div>
       <form>
@@ -27,7 +27,7 @@ export default function SearchBar() {
       {filteredList.map((video) => (
         <div
           key={video.id}
-          className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]"
+          className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(400px,1fr))]"
         >
           <Youtube {...video} />
         </div>

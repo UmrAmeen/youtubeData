@@ -9,9 +9,9 @@ export default async function Page({ params }: { params: any }) {
   if (youtube?.id === undefined) {
     return <p>not found</p>;
   }
-  console.log("youtube", youtube);
+  // console.log("youtube", youtube);
   return (
-    <div >
+    <div>
       <iframe src={youtube.videoUrl} />
       <p className="text-blue-600 font-bold">{youtube.title}</p>
       <div className="flex gap-2">
