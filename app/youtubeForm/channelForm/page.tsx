@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function ChannelForm() {
-  const [channel, setChannel] = useState("");
+  const [name, setName] = useState("");
   return (
     <>
       <form className="channelForm">
@@ -19,9 +19,9 @@ export default function ChannelForm() {
         </label>
         <label>
           name:
-          <input placeholder="name" />
+          <input placeholder="name" value={name} onChange={(e)=>setName(e.target.value)} />
         </label>
-        <button className="submitButton">submit</button>
+        <button type="submit" className="submitButton">submit</button>
       </form>
       <Link href="/youtubeForm">
         <button className="myButton">youtubeForm</button>

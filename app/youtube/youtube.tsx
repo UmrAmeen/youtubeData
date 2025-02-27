@@ -43,6 +43,7 @@ export default function Youtube({
         <p className="text-secondary-text text-sm">{channel.name}</p>
       </div>
      
+    
     </div>
   );
 }
