@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { videos } from "./data/data";
+import { videos } from "../data/data";
 import Youtube from "./youtube";
 
 export default function SearchBar() {

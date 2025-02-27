@@ -19,8 +19,8 @@ export const videos = [
     id: "2",
     title: "For Bigger Joyrides",
     channel: {
-      name: "Web Dev Simplified",
-      id: "WebDevSimplified",
+      name: "Programming with Mosh",
+      id: "programmingwithmosh",
       profileUrl:
         "https://yt3.ggpht.com/ytc/APkrFKZWeMCsx4Q9e_Hm6nhOOUQ3fv96QGUXiMr1-pPP=s48-c-k-c0x00ffffff-no-rj",
     },
@@ -51,8 +51,8 @@ export const videos = [
     id: "4",
     title: "For Bigger Escape",
     channel: {
-      name: "Kevin Powell",
-      id: "KevinPowell",
+      name: "LearnCode.academy",
+      id: "learncodeacademy",
       profileUrl:
         "https://yt3.ggpht.com/ytc/APkrFKa6XiLa13mMVPzkmmTBcgNPjjqCGPrY86KfJFmf5w=s48-c-k-c0x00ffffff-no-rj",
     },
@@ -67,8 +67,8 @@ export const videos = [
     id: "5",
     title: "I Cannot Believe React Made A Hook For This",
     channel: {
-      name: "Web Dev Simplified",
-      id: "WebDevSimplified",
+      name: "CodeHelp",
+      id: "CodeHelp",
       profileUrl:
         "https://yt3.ggpht.com/ytc/APkrFKZWeMCsx4Q9e_Hm6nhOOUQ3fv96QGUXiMr1-pPP=s48-c-k-c0x00ffffff-no-rj",
     },
@@ -115,8 +115,8 @@ export const videos = [
     id: "8",
     title: "Zig in 100 Seconds",
     channel: {
-      name: "Fireship",
-      id: "Fireship",
+      name: "Error Makes Clever",
+      id: "ErrorMakesClever",
       profileUrl:
         "https://yt3.googleusercontent.com/ytc/APkrFKb--NH6RwAGHYsD3KfxX-SAgWgIHrjR5E4Jb5SDSQ=s176-c-k-c0x00ffffff-no-rj",
     },
