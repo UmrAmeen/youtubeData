@@ -6,10 +6,11 @@ import { videos } from "../data/data";
 export default function MyPage() {
   const [title, setTitel] = useState("");
   const [views, setViews] = useState("");
-  const [thumbnail,setThumbnail]=useState("")
+  const [thumbnail, setThumbnail] = useState("");
   console.log("titel", title);
   console.log("views", views);
-  console.log("thumbnail",thumbnail)
+  console.log("thumbnail", thumbnail);
+
   return (
     <div>
       <form className="myFormPage">
@@ -42,13 +43,19 @@ export default function MyPage() {
         </label>
         <label>
           thumbnailUrl:
-          <input  placeholder=" thumbnailUrl" value={thumbnail} onChange={e=> setThumbnail(e.target.value)}/>
+          <input
+            placeholder=" thumbnailUrl"
+            value={thumbnail}
+            onChange={(e) => setThumbnail(e.target.value)}
+          />
         </label>
         <label>
           videoUrl :
           <input placeholder="videoUrl" />
         </label>
-        <button type="submit" className="submitButton">submit</button>
+        <button type="submit" className="submitButton">
+          submit
+        </button>
       </form>
       <Link href="/youtubeForm/channelForm">
         <button className="myButton">channelForm</button>

@@ -26,9 +26,7 @@ export default function Youtube({
   videoUrl,
 }: VideoGridItemProps) {
   return (
-    
     <div className="flex flex-col gap-2">
-      
       <Link href={id}>
         <div className="relative">
           <img src={thumbnailUrl} className="block w-full" />
@@ -42,8 +40,6 @@ export default function Youtube({
         <img src={channel.profileUrl} className=" w-12 h-12 rounded-full" />
         <p className="text-secondary-text text-sm">{channel.name}</p>
       </div>
-     
-    
     </div>
   );
 }
