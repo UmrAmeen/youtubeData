@@ -3,19 +3,22 @@
 import { createChannel } from "@/app/actions";
 import { videos } from "@/app/data/data";
 import Link from "next/link";
-import { useState } from "react";
+import { useActionState, useState } from "react";
 
 export default function ChannelForm() {
+  const [state, formAction, isPending] = useActionState(createChannel, {
+    success: false,
+  });
   const [name, setName] = useState("");
 
-
+  console.log("state", state);
   // function onSubmit(e: React.FormEvent) {
   //   e.preventDefault();
   // }
 
   return (
     <>
-      <form className="channelForm" action={createChannel}>
+      <form className="channelForm">
         <label>
           channel :
           <select>
@@ -33,7 +36,12 @@ export default function ChannelForm() {
             onChange={(e) => setName(e.target.value)}
           />
         </label>
-        <button type="submit" className="submitButton">
+        <button
+          disabled={isPending}
+          type="submit"
+          className="submitButton"
+          formAction={formAction}
+        >
           submit
         </button>
       </form>
