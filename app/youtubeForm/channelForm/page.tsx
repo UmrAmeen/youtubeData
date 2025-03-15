@@ -8,6 +8,7 @@ import { useActionState, useState } from "react";
 export default function ChannelForm() {
   const [state, formAction, isPending] = useActionState(createChannel, {
     success: false,
+    error: "",
   });
   const [name, setName] = useState("");
 
@@ -18,6 +19,7 @@ export default function ChannelForm() {
 
   return (
     <>
+      {state.success ? <div>Success</div> : <div>{state.error}</div>}
       <form className="channelForm">
         <label>
           channel :

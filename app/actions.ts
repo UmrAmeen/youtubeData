@@ -1,23 +1,45 @@
-"use server"
+"use server";
 
-import db from "./lib/sqlite/db"
+import db from "./lib/sqlite/db";
 
 export async function createChannel(prevFormState: any, formData: FormData) {
-  const name = formData.get('name') as string
-  console.log("name", name)
+  try {
+    const name = formData.get("name") as string;
+    console.log("name", name);
 
-  const insert = db.prepare("INSERT INTO channel(id, name) VALUES(?, ?)")
-  c
-  const result = insert.run("123", name)
+    const data = db.prepare("SELECT * FROM channel WHERE name = ?").get(name);
+    console.log("data", data);
+    if (data) {
+      throw new Error("channel name is already taken");
+    }
 
+    const insert = db.prepare("INSERT INTO channel(id, name) VALUES(?, ?)");
 
-  if (result.lastInsertRowid) {
+    const result = insert.run("1235", name);
+
+    if (result.lastInsertRowid) {
+      return {
+        success: true,
+        error: "",
+      };
+    }
     return {
-      success: true
+      success: false,
+      error: "Something went wrong!",
+    };
+  } catch (error) {
+    console.log("error", error);
+
+    if (error instanceof Error) {
+      return {
+        success: false,
+        error: error.message,
+      };
+    } else {
+      return {
+        success: false,
+        error: error,
+      };
     }
   }
-  return {
-    success: false
-  }
-
 }
