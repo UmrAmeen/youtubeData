@@ -4,10 +4,10 @@ import db from "./lib/sqlite/db";
 
 export default function Home() {
    const rows = db.prepare("SELECT * FROM youtubeData").all()
-   console.log("rows", rows)
+  //  console.log("rows", rows)
   return (
     <div>
-      <MyPage />
+      <MyPage  />
       <SearchBar />
     </div>
   );

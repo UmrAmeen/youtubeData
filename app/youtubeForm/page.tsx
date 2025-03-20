@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import Link from "next/link";
 import { videos } from "../data/data";
+import { createChannelForm } from "../youtubeAction";
 
 export default function MyPage() {
   const [title, setTitel] = useState("");
@@ -10,9 +11,13 @@ export default function MyPage() {
   console.log("titel", title);
   console.log("views", views);
   console.log("thumbnail", thumbnail);
-
+  const [state, formAction, isPending] = useActionState(createChannelForm, {
+    success: false,
+    error: "",
+  });
   return (
     <div>
+      {state.success ? <div>Success</div> : <div>{state.error}</div>}
       <form className="myFormPage">
         <label>
           channel:
@@ -26,7 +31,8 @@ export default function MyPage() {
         <label>
           titel:
           <input
-            placeholder="titel"
+            name="title"
+            placeholder="title"
             value={title}
             onChange={(e) => setTitel(e.target.value)}
           />
@@ -35,11 +41,15 @@ export default function MyPage() {
         <label>
           views:
           <input
-            type="text"
+            name="views"
             placeholder="views"
             value={views}
             onChange={(e) => setViews(e.target.value)}
           />
+        </label>
+        <label>
+          postedAt
+          <input  name="postedAt" />
         </label>
         <label>
           thumbnailUrl:
@@ -53,7 +63,12 @@ export default function MyPage() {
           videoUrl :
           <input placeholder="videoUrl" />
         </label>
-        <button type="submit" className="submitButton">
+        <button
+          type="submit"
+          className="submitButton"
+          disabled={isPending}
+          formAction={formAction}
+        >
           submit
         </button>
       </form>
