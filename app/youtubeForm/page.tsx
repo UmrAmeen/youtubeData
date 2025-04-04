@@ -8,9 +8,7 @@ export default function MyPage() {
   const [title, setTitel] = useState("");
   const [views, setViews] = useState("");
   const [thumbnail, setThumbnail] = useState("");
-  console.log("titel", title);
-  console.log("views", views);
-  console.log("thumbnail", thumbnail);
+ 
   const [state, formAction, isPending] = useActionState(createChannelForm, {
     success: false,
     error: "",
@@ -29,7 +27,7 @@ export default function MyPage() {
         </label>
 
         <label>
-          titel:
+          title:
           <input
             name="title"
             placeholder="title"
